@@ -1,0 +1,26 @@
+﻿@model IEnumerable<JobSchedule.Data.Customer>
+@{
+    ViewData["Title"] = "Create customer";
+}
+
+<h4>Customer</h4>
+<hr />
+
+
+<div class="row">
+    <div class="col-6">
+        Id
+    </div>
+    <div class="col-6">
+        Name
+    </div>
+    @foreach (var customer in Model)
+    {
+        <div class="col-6">
+            @customer.Id
+        </div>
+        <div class="col-6">
+            @customer.Name
+        </div>
+    }
+</div>

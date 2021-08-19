@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MvcDay1.Applications.Books.Queries.GetBookQuery.BookViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a asp-action="Detail" asp-route-BookId="@item.Id">Details</a> |
+                <a asp-action="Edit" asp-route-BookId="@item.Id">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
